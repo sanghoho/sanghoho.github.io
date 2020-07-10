@@ -5,13 +5,6 @@
         <description>Django - tag - R is Well</description>
         <generator>Hugo -- gohugo.io</generator><language>kr</language><managingEditor>ash1151@ajou.ac.kr (sanghoho)</managingEditor>
             <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/tags/django/" rel="self" type="application/rss+xml" /><item>
-    <title>[Go] Hugo Quick Start</title>
-    <link>http://sanghoho.github.io/2020/07/hugo-quick-start/</link>
-    <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>
-    <author></author>
-    <guid>http://sanghoho.github.io/2020/07/hugo-quick-start/</guid>
-    <description><![CDATA[Hugo 설치 Ubuntu 1 sudo apt-get install hugo Windows 릴리즈 버전만 깃허브에서 다운 받아서 C:\Hugo\bin에 넣어주고 환경변수 셋팅만 해주면 된다. Hugo new new 키워드는 새로운 프로젝트를]]></description>
-</item><item>
     <title>First Post</title>
     <link>http://sanghoho.github.io/english/posts/first-post/</link>
     <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>

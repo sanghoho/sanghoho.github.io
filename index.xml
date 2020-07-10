@@ -12,7 +12,7 @@
     <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>
     <author></author>
     <guid>http://sanghoho.github.io/2020/07/hugo-quick-start/</guid>
-    <description><![CDATA[Hugo 설치 Ubuntu 1 sudo apt-get install hugo Windows 릴리즈 버전만 깃허브에서 다운 받아서 C:\Hugo\bin에 넣어주고 환경변수 셋팅만 해주면 된다. Hugo new new 키워드는 새로운 프로젝트를]]></description>
+    <description><![CDATA[Introduction 요즘은 정말 많은 블로그들이 운영되면서 양질의 정보들을 제공해주고 있습니다. 한국에서도 예전부터 다음, 네이버 블로그, 그리고 티스토리 등을 통해서 다양한 정]]></description>
 </item><item>
     <title>First Post</title>
     <link>http://sanghoho.github.io/2020/07/first-post/</link>

@@ -1,10 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Python - tag - R is Well</title>
+        <title>python - tag - R is Well</title>
         <link>http://sanghoho.github.io/tags/python/</link>
-        <description>Python - tag - R is Well</description>
+        <description>python - tag - R is Well</description>
         <generator>Hugo -- gohugo.io</generator><language>kr</language><managingEditor>ash1151@ajou.ac.kr (sanghoho)</managingEditor>
-            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 15:39:31 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>[fastai] Chapter1 Quickstart</title>
+    <link>http://sanghoho.github.io/draft/fastai-1-quickstart/</link>
+    <pubDate>Fri, 10 Jul 2020 15:39:31 &#43;0900</pubDate>
+    <author></author>
+    <guid>http://sanghoho.github.io/draft/fastai-1-quickstart/</guid>
+    <description><![CDATA[1. Introduction fastai는 ~~ 2.]]></description>
+</item><item>
     <title>First Post</title>
     <link>http://sanghoho.github.io/english/posts/first-post/</link>
     <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>
