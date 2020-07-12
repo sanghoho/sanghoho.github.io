@@ -1,7 +1,7 @@
 # [Hugo] Quick Start 1
 
 
-<!-- <img src="https://gohugo.io/images/gohugoio-card.png" /> -->
+<img src="https://gohugo.io/images/gohugoio-card.png" />
 
 # Introduction
 

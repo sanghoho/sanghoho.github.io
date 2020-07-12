@@ -10,7 +10,7 @@
     <pubDate>Fri, 10 Jul 2020 01:34:34 &#43;0900</pubDate>
     <author>Author</author>
     <guid>http://sanghoho.github.io/en/2020/07/hugo-quick-start/</guid>
-    <description><![CDATA[-- Introduction Nowadays, many people are blogging to provide good quality information.
+    <description><![CDATA[Introduction Nowadays, many people are blogging to provide good quality information.
 In South Korea, various information has been provided through Daum and Naver Blog, and Tistory.
 Recently, more high-quality information is provided worldwide through media such as github blog and medium.
 Therefore, in this post, I will introduce the Go language based Static Website Generator Hugo, among the many techniques that help you create a github blog.
