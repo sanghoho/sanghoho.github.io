@@ -2,7 +2,7 @@
     <channel>
         <title>R is Well</title>
         <link>http://sanghoho.github.io/</link>
-        <description>About LoveIt Theme</description>
+        <description>데이터 사이언스, 개발, 그리고 경영 관련 블로그입니다.</description>
         <generator>Hugo -- gohugo.io</generator><language>kr</language><managingEditor>ash1151@ajou.ac.kr (sanghoho)</managingEditor>
             <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:23:44 &#43;0900</lastBuildDate>
             <atom:link href="http://sanghoho.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -10,8 +10,8 @@
     <title>[Hugo] Quick Start 1</title>
     <link>http://sanghoho.github.io/2020/07/hugo-quick-start/</link>
     <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>
-    <author></author>
+    <author>Author</author>
     <guid>http://sanghoho.github.io/2020/07/hugo-quick-start/</guid>
-    <description><![CDATA[Introduction 요즘은 정말 많은 블로그들이 운영되면서 양질의 정보들을 제공해주고 있습니다. 한국에서도 예전부터 다음, 네이버 블로그, 그리고 티스토리 등을 통해서 다양한 정]]></description>
+    <description><![CDATA[-- Introduction 요즘은 정말 많은 블로그들이 운영되면서 양질의 정보들을 제공해주고 있습니다. 한국에서도 예전부터 다음, 네이버 블로그, 그리고 티스토리 등을 통해서 다양한]]></description>
 </item></channel>
 </rss>

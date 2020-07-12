@@ -2,10 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://sanghoho.github.io/english/posts/hugo-quick-start/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://sanghoho.github.io/english/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://sanghoho.github.io/about/</loc><lastmod>2020-07-10T13:49:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://sanghoho.github.io/</loc><lastmod>2020-07-10T13:49:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://sanghoho.github.io/about/</loc><lastmod>2020-07-10T01:23:44&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://sanghoho.github.io/en/about/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="kr"
+                    href="http://sanghoho.github.io/about/"
+                    /></url><url>
+            <loc>http://sanghoho.github.io/</loc><lastmod>2020-07-10T01:23:44&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/"
@@ -14,7 +20,7 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/2020/07/hugo-quick-start/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://sanghoho.github.io/2020/07/hugo-quick-start/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/2020/07/hugo-quick-start/"
@@ -23,7 +29,7 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/2020/07/hugo-quick-start/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/categories/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://sanghoho.github.io/categories/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/categories/"
@@ -32,9 +38,25 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/categories/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/categories/development/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://sanghoho.github.io/tags/hugo/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://sanghoho.github.io/posts/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://sanghoho.github.io/categories/development/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://sanghoho.github.io/en/categories/development/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="kr"
+                    href="http://sanghoho.github.io/categories/development/"
+                    /></url><url>
+            <loc>http://sanghoho.github.io/tags/hugo/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://sanghoho.github.io/en/tags/hugo/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="kr"
+                    href="http://sanghoho.github.io/tags/hugo/"
+                    /></url><url>
+            <loc>http://sanghoho.github.io/posts/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/posts/"
@@ -43,8 +65,16 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/posts/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/tags/quick-start/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://sanghoho.github.io/tags/</loc><lastmod>2020-07-12T12:35:35&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://sanghoho.github.io/tags/quick-start/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://sanghoho.github.io/en/tags/quick-start/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="kr"
+                    href="http://sanghoho.github.io/tags/quick-start/"
+                    /></url><url>
+            <loc>http://sanghoho.github.io/tags/</loc><lastmod>2020-07-10T01:23:30&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/tags/"

@@ -1,12 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>R is Well</title>
-        <link>http://sanghoho.github.io/en/</link>
-        <description>About Data Science, Development, and Business</description>
+        <title>hugo - Tag - R is Well</title>
+        <link>http://sanghoho.github.io/en/tags/hugo/</link>
+        <description>hugo - Tag - R is Well</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ash1151@ajou.ac.kr (sanghoho)</managingEditor>
-            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:23:44 &#43;0900</lastBuildDate>
-            <atom:link href="http://sanghoho.github.io/en/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:34:34 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/en/tags/hugo/" rel="self" type="application/rss+xml" /><item>
     <title>[Hugo] Quick Start 1</title>
     <link>http://sanghoho.github.io/en/2020/07/hugo-quick-start/</link>
     <pubDate>Fri, 10 Jul 2020 01:34:34 &#43;0900</pubDate>
