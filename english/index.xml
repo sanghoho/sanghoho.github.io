@@ -15,21 +15,16 @@
     
     
     <item>
-      <title>[Hugo] Quick Start</title>
+      <title>[Hugo] Quick Start 1</title>
       <link>http://sanghoho.github.io/english/posts/hugo-quick-start/</link>
       <pubDate>Fri, 10 Jul 2020 01:34:34 +0900</pubDate>
       <author>ash1151@ajou.ac.kr (sanghoho)</author>
       <guid>http://sanghoho.github.io/english/posts/hugo-quick-start/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>http://sanghoho.github.io/english/posts/first-post/</link>
-      <pubDate>Fri, 10 Jul 2020 01:23:30 +0900</pubDate>
-      <author>ash1151@ajou.ac.kr (sanghoho)</author>
-      <guid>http://sanghoho.github.io/english/posts/first-post/</guid>
-      <description>Hello My Name is Sangho 이제 무엇을 해볼까요? 1 2 3 def say_hello(name=&amp;#34;sanghoho&amp;#34;): print(&amp;#34;Hello &amp;#34;, name, &amp;#34;!&amp;#34;)</description>
+      <description>Introduction Nowadays, many people are blogging to provide good quality information.
+In South Korea, various information has been provided through Daum and Naver Blog, and Tistory.
+Recently, more high-quality information is provided worldwide through media such as github blog and medium.
+Therefore, in this post, I will introduce the Go language based Static Website Generator Hugo, among the many techniques that help you create a github blog.
+Through the Hugo Quick Start series, you can learn about OS-specific installation, key commands, blog preview and creation.</description>
     </item>
     
   </channel>

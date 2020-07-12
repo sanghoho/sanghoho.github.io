@@ -5,32 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>[Hugo] Quick Start - R is Well</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="[Hugo] Quick Start" />
-<meta property="og:description" content="" />
+        <title>[Hugo] Quick Start 1 - R is Well</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="[Hugo] Quick Start 1" />
+<meta property="og:description" content="Introduction Nowadays, many people are blogging to provide good quality information.
+In South Korea, various information has been provided through Daum and Naver Blog, and Tistory.
+Recently, more high-quality information is provided worldwide through media such as github blog and medium.
+Therefore, in this post, I will introduce the Go language based Static Website Generator Hugo, among the many techniques that help you create a github blog.
+Through the Hugo Quick Start series, you can learn about OS-specific installation, key commands, blog preview and creation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://sanghoho.github.io/english/posts/hugo-quick-start/" />
 <meta property="og:image" content="http://sanghoho.github.io/logo.png"/>
 <meta property="article:published_time" content="2020-07-10T01:34:34+09:00" />
-<meta property="article:modified_time" content="2020-07-10T01:41:16+09:00" />
+<meta property="article:modified_time" content="2020-07-12T12:35:35+09:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://sanghoho.github.io/logo.png"/>
 
-<meta name="twitter:title" content="[Hugo] Quick Start"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="[Hugo] Quick Start 1"/>
+<meta name="twitter:description" content="Introduction Nowadays, many people are blogging to provide good quality information.
+In South Korea, various information has been provided through Daum and Naver Blog, and Tistory.
+Recently, more high-quality information is provided worldwide through media such as github blog and medium.
+Therefore, in this post, I will introduce the Go language based Static Website Generator Hugo, among the many techniques that help you create a github blog.
+Through the Hugo Quick Start series, you can learn about OS-specific installation, key commands, blog preview and creation."/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://sanghoho.github.io/english/posts/hugo-quick-start/" /><link rel="prev" href="http://sanghoho.github.io/english/posts/first-post/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://sanghoho.github.io/english/posts/hugo-quick-start/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "[Hugo] Quick Start",
+        "headline": "[Hugo] Quick Start 1",
         "inLanguage": "kr",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/sanghoho.github.io\/english\/posts\/hugo-quick-start\/"
-        },"image": ["http:\/\/sanghoho.github.io\/images\/Apple-Devices-Preview.png"],"genre": "english","wordcount":  0 ,
-        "url": "http:\/\/sanghoho.github.io\/english\/posts\/hugo-quick-start\/","datePublished": "2020-07-10T01:34:34+09:00","dateModified": "2020-07-10T01:41:16+09:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["http:\/\/sanghoho.github.io\/images\/Apple-Devices-Preview.png"],"genre": "english","wordcount":  740 ,
+        "url": "http:\/\/sanghoho.github.io\/english\/posts\/hugo-quick-start\/","datePublished": "2020-07-10T01:34:34+09:00","dateModified": "2020-07-12T12:35:35+09:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/sanghoho.github.io\/images\/R-icon.png"},"author": {
                 "@type": "Person",
@@ -48,18 +56,7 @@
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 포스트 </a><a class="menu-item" href="/tags/"> 태그 </a><a class="menu-item" href="/categories/"> 카테고리 </a><a class="menu-item" href="/categories/project/"> 프로젝트 </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="">한국어<i class="fas fa-chevron-right fa-fw"></i>
                         <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/english/posts/hugo-quick-start/" selected>한국어</option></select>
-                    </a><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a>
             </div>
@@ -75,23 +72,7 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="" id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">포스트</a><a class="menu-item" href="/tags/" title="">태그</a><a class="menu-item" href="/categories/" title="">카테고리</a><a class="menu-item" href="/categories/project/" title="">프로젝트</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">포스트</a><a class="menu-item" href="/tags/" title="">태그</a><a class="menu-item" href="/categories/" title="">카테고리</a><a class="menu-item" href="/categories/project/" title="">프로젝트</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="">한국어<i class="fas fa-chevron-right fa-fw"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/english/posts/hugo-quick-start/" selected>한국어</option></select>
@@ -105,7 +86,166 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">[Hugo] Quick Start</h1><div class="content" id="content"></div><div id="comments"></div></div></div>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">[Hugo] Quick Start 1</h1><div class="content" id="content"><p><img src="https://gohugo.io/images/gohugoio-card.png" /></p>
+<h1 id="introduction">Introduction</h1>
+<p>Nowadays, many people are blogging to provide good quality information.</p>
+<p>In South Korea, various information has been provided through Daum and Naver Blog, and Tistory.</p>
+<p>Recently, more high-quality information is provided worldwide through media such as github blog and medium.</p>
+<p>Therefore, in this post, I will introduce the <code>Go</code> language based Static Website Generator <strong>Hugo</strong>, among the many techniques that help you create a github blog.</p>
+<p>Through the Hugo Quick Start series, you can learn about OS-specific installation, key commands, blog preview and creation.</p>
+<p>Since git is required for convenient operation, so you need to configure the git environment.</p>
+<ul>
+<li><code>git</code>: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+</ul>
+<h2 id="1-install-hugo">1. Install Hugo</h2>
+<p>As a first step to creating a blog with Hugo, of course, you need to install Hugo.</p>
+<p>The environment I am working on is <a href="https://releases.ubuntu.com/20.04/" target="_blank" rel="noopener noreffer">Ubuntu 20.04</a>, a Linux environment.</p>
+<p>For Unix-based Linux and MacOS, installing Hugo is fairly straightforward.</p>
+<h3 id="11-ubuntu">1.1. Ubuntu</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install hugo 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="12-macos">1.2. MacOS</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="13-windows">1.3. Windows</h3>
+<p>For Windows, download only the release version from <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">Hugo</a>, put the extracted file under the C drive, and set environment variables.</p>
+<p>For example, I put the files in <code>C:\Hugo\bin</code> and added the folder path to the environment variable.</p>
+<p>If you set the environment variables like this, you can use the Hugo command by launching <strong>cmd</strong> or <strong>powershell</strong> in Windows.</p>
+<p><br /></p>
+<p>If you have installed Hugo for your OS using the above methods, check the current Hugo Version with the following command to check if the installation was successful.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo version
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/hugo_quick_start/hugo_version.png"
+        data-srcset="/images/hugo_quick_start/hugo_version.png, /images/hugo_quick_start/hugo_version.png 1.5x, /images/hugo_quick_start/hugo_version.png 2x"
+        data-sizes="auto"
+        alt="/images/hugo_quick_start/hugo_version.png"
+        title="hugo version check" /></p>
+<h2 id="2-create-hugo-site">2. Create Hugo Site</h2>
+<p>Now you can use a variety of features, including hugo&rsquo;s site creation feature.</p>
+<h3 id="21-new-site">2.1. <code>new site</code></h3>
+<p>There are two things you can do with the <code>new</code> keyword, which can be used when creating a new blog project.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo new site quickstart
+</code></pre></td></tr></table>
+</div>
+</div><p>With the above command, we created a new blog project in the folder named <code>quickstart</code>.</p>
+<p>The project has a seemingly complex structure, but I will explain this structure as detail in the following post.</p>
+<h3 id="22-new-posts">2.2. <code>new posts</code></h3>
+<p>The <code>new</code> keyword can also be used to create new posts.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ./quickstart
+hugo new posts/my-first-post.md
+</code></pre></td></tr></table>
+</div>
+</div><p>Through this command, a <a href="https://gist.github.com/ihoneymon/652be052a0727ad59601" target="_blank" rel="noopener noreffer">markdown</a> document was created in our project called <code>content/posts/my-frist-post.md</code>.</p>
+<h2 id="3-use-hugo-theme">3. Use Hugo Theme</h2>
+<p>In the current state, nothing will be seen even if you run the project.</p>
+<p>This is because there is currently no theme specified for how to show the blog.</p>
+<p>You can also develop and use themes directly in the <code>themes</code> folder, but it is also a good idea to quickly apply well-made themes.</p>
+<blockquote>
+<p>Hugo Theme List: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
+</blockquote>
+<h3 id="31-download-theme">3.1. Download theme</h3>
+<p>For first-time users, we will apply a simple yet beautiful <a href="https://themes.gohugo.io/gohugo-theme-ananke/" target="_blank" rel="noopener noreffer">Ananke</a> theme.</p>
+<p>After initializing git in the folder as follows, you should add the theme you want to use as <code>submodule</code> rather than receiving it as <code>clone</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+</code></pre></td></tr></table>
+</div>
+</div><p>The <code>themes/ananke</code> at the end means that the theme will be downloaded and saved under the <code>ananke</code> folder which is in the <code>themes</code> folder of project.</p>
+<h3 id="32-apply-theme-using-configtoml">3.2. Apply theme using <code>config.toml</code></h3>
+<p>If the theme has been downloaded, you should modify the <code>config.toml</code> in the project folder so that the theme is applied.</p>
+<p>To the contents of the initial file as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;http://example.org/&#34;</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;en-us&#34;</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;My New Hugo Site&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Just add a line to <code>theme = ananke</code> (the folder name created earlier).</p>
+<h2 id="4-run-and-generate-hugo">4. Run and Generate Hugo</h2>
+<h3 id="41-preview-blog">4.1. Preview blog</h3>
+<p>Now you can finally see how your blog will look.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo server -D
+</code></pre></td></tr></table>
+</div>
+</div><p>When you run that code, you can see the theme applied to the blog and the posts that have been made.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/hugo_quick_start/hugo_server.png"
+        data-srcset="/images/hugo_quick_start/hugo_server.png, /images/hugo_quick_start/hugo_server.png 1.5x, /images/hugo_quick_start/hugo_server.png 2x"
+        data-sizes="auto"
+        alt="/images/hugo_quick_start/hugo_server.png"
+        title="hugo server -D" /></p>
+<p>Originally, the default port should be <em>1313</em>, such as <code>localhost:1313</code> or <code>127.0.0.1:1313</code>, but when running multiple ports, the remaining ports are randomly specified.</p>
+<h3 id="42-generate-blog">4.2. Generate blog</h3>
+<p>The previous command just provided a preview of how the blog will look on your local environment, however, the following command creates a real website consisting of <code>html</code>, <code>css</code>, <code>javascript</code>, etc.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo -D
+</code></pre></td></tr></table>
+</div>
+</div><p>A new public folder is created, and the files are generated accordingly. When you upload the generated file to the github repository to host, the blog is hosted.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>In this post, we learned about the process from installing Hugo to generating blog.</p>
+<p>In the next <strong>Hugo Quick Start</strong> post, I&rsquo;ll cover the details of the Hugo structure, starting with how to host a generated website on Github.</p>
+<p>Thank you.</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener noreffer">Quick Start | Hugo</a></li>
+</ul>
+</div><div id="comments"></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">sanghoho</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
@@ -117,7 +257,7 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-172330494-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172330494-1" async></script></body>

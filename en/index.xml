@@ -7,20 +7,15 @@
             <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:34:34 &#43;0900</lastBuildDate>
             <atom:link href="http://sanghoho.github.io/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>[Hugo] Quick Start</title>
+    <title>[Hugo] Quick Start 1</title>
     <link>http://sanghoho.github.io/en/2020/07/hugo-quick-start/</link>
     <pubDate>Fri, 10 Jul 2020 01:34:34 &#43;0900</pubDate>
     <author>Author</author>
     <guid>http://sanghoho.github.io/en/2020/07/hugo-quick-start/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>First Post</title>
-    <link>http://sanghoho.github.io/en/2020/07/first-post/</link>
-    <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>
-    <author>Author</author>
-    <guid>http://sanghoho.github.io/en/2020/07/first-post/</guid>
-    <description><![CDATA[Hello My Name is Sangho
-이제 무엇을 해볼까요?
-1 2 3  def say_hello(name=&#34;sanghoho&#34;): print(&#34;Hello &#34;, name, &#34;!&#34;)   ]]></description>
+    <description><![CDATA[Introduction Nowadays, many people are blogging to provide good quality information.
+In South Korea, various information has been provided through Daum and Naver Blog, and Tistory.
+Recently, more high-quality information is provided worldwide through media such as github blog and medium.
+Therefore, in this post, I will introduce the Go language based Static Website Generator Hugo, among the many techniques that help you create a github blog.
+Through the Hugo Quick Start series, you can learn about OS-specific installation, key commands, blog preview and creation.]]></description>
 </item></channel>
 </rss>
