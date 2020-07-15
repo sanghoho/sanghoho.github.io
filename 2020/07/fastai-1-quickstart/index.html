@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Deep Learning with Fastai - 1: Quick Start - R is Well</title><meta name="Description" content="데이터 사이언스, 개발, 그리고 경영 관련 블로그입니다."><meta property="og:title" content="Deep Learning with Fastai - 1: Quick Start" />
+<meta property="og:description" content="Introduction fastai는 Pytorch 기반의 딥러닝 API로 딥러닝 기술을 누구나 쉽게 이용할 수 있도록 하는 것을 목표로 하며 강의와 라이브러리를 제공합니다. 이 글을 시작으로하는" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sanghoho.github.io/2020/07/fastai-1-quickstart/" />
+<meta property="og:image" content="http://sanghoho.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-07-10T15:39:31+09:00" />
+<meta property="article:modified_time" content="2020-07-15T22:14:55+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://sanghoho.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Deep Learning with Fastai - 1: Quick Start"/>
+<meta name="twitter:description" content="Introduction fastai는 Pytorch 기반의 딥러닝 API로 딥러닝 기술을 누구나 쉽게 이용할 수 있도록 하는 것을 목표로 하며 강의와 라이브러리를 제공합니다. 이 글을 시작으로하는"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://sanghoho.github.io/2020/07/fastai-1-quickstart/" /><link rel="prev" href="http://sanghoho.github.io/2020/07/hugo-quick-start/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="tegAJOFg4fldtkG9h5a3EC_hVdCqMbfa40Cw2N7ewG8" /><meta name="naver-site-verification" content="1fee545ec7935624af0f6d63efe1e63f48a100b5" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Deep Learning with Fastai - 1: Quick Start",
+        "inLanguage": "kr",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/sanghoho.github.io\/2020\/07\/fastai-1-quickstart\/"
+        },"image": ["http:\/\/sanghoho.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "fastai, python, colab","wordcount":  3760 ,
+        "url": "http:\/\/sanghoho.github.io\/2020\/07\/fastai-1-quickstart\/","datePublished": "2020-07-10T15:39:31+09:00","dateModified": "2020-07-15T22:14:55+09:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "sanghoho","logo": "http:\/\/sanghoho.github.io\/images\/R-icon.png"},"author": {
+                "@type": "Person",
+                "name": "sanghoho"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="R is Well"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>R is Well</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 포스트 </a><a class="menu-item" href="/tags/"> 태그 </a><a class="menu-item" href="/categories/"> 카테고리 </a><a class="menu-item" href="/categories/project/"> 프로젝트 </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">한국어<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2020/07/fastai-1-quickstart/" selected>한국어</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="R is Well"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>R is Well</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">포스트</a><a class="menu-item" href="/tags/" title="">태그</a><a class="menu-item" href="/categories/" title="">카테고리</a><a class="menu-item" href="/categories/project/" title="">프로젝트</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">한국어<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2020/07/fastai-1-quickstart/" selected>한국어</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Deep Learning with Fastai - 1: Quick Start</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>sanghoho</a></span>&nbsp;<span class="post-category">included in <a href="/categories/machine-learning/"><i class="far fa-folder fa-fw"></i>Machine Learning</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-10">2020-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3760 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirement">Requirement</a>
+      <ul>
+        <li><a href="#colab-gpu-셋팅">Colab GPU 셋팅</a></li>
+        <li><a href="#google-drive-연동">Google Drive 연동</a></li>
+        <li><a href="#import-fastai">Import fastai</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-fastai-quick-start">1. <code>fastai</code> Quick Start</a>
+      <ul>
+        <li><a href="#11-데이터-준비">1.1. 데이터 준비</a></li>
+        <li><a href="#12-모델-생성-및-학습">1.2. 모델 생성 및 학습</a></li>
+        <li><a href="#13-모델-해석">1.3. 모델 해석</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-fastai-advanced-start">2. <code>fastai</code> Advanced Start</a>
+      <ul>
+        <li><a href="#21-unfreezing-and-fine-tuning">2.1. Unfreezing and fine-tuning</a></li>
+        <li><a href="#22-learning-rates">2.2. learning rates</a></li>
+        <li><a href="#23-change-architecture">2.3. Change Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-alpha-mnist-dataset">3. $(+\alpha)$ MNIST Dataset</a>
+      <ul>
+        <li><a href="#31-from_folder">3.1. <code>from_folder</code></a></li>
+        <li><a href="#32-from_csv">3.2. <code>from_csv</code></a></li>
+        <li><a href="#33-from_df">3.3. <code>from_df</code></a></li>
+        <li><a href="#34-from_name_re">3.4. <code>from_name_re</code></a></li>
+        <li><a href="#35-from_name_func">3.5. <code>from_name_func</code></a></li>
+        <li><a href="#36-from_lists">3.6. <code>from_lists</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><img class="lazyload"  src="/images/fastai_1_quickstart/cover.png" /></p>
+<h1 id="introduction">Introduction</h1>
+<p><code>fastai</code>는 Pytorch 기반의 딥러닝 API로 딥러닝 기술을 누구나 쉽게 이용할 수 있도록 하는 것을 목표로 하며 <a href="https://course.fast.ai/" target="_blank" rel="noopener noreffer">강의</a>와 <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreffer">라이브러리</a>를 제공합니다.</p>
+<p>이 글을 시작으로하는 <em><strong>Deep Learning with fastai</strong></em> 시리즈는 <code>fastai</code>의 강의를 정리하는 목적과 더불어, 실제로 실습을 진행하면서 새롭게 알게된 점이나 느낀점을 공유하고자 하는 목적을 가지고 있습니다.</p>
+<p>첫강의의 내용은 <strong>강아지와 고양이의 품종 분류</strong>로 이미지 분류에 대해서 Quick Start 방식으로 내용을 진행하며, 이 강의 내용만으로도 <code>fastai</code> 가 추구하는 방향에 대해서 어렴풋이 알 수 있을 것입니다.</p>
+<p>비단 첫강의 뿐만 아니라 강의 스타일 자체가 Top-Down 방식으로 진행되어, 우선 실습해보고 이를 기반으로 이론에 대해서 알아보는 방식이니 참고하시면 좋을 것 같습니다.</p>
+<p>여기서 사용된 실습 자료는 Github <a href="https://github.com/sanghoho/Fastai-Practice" target="_blank" rel="noopener noreffer">Fastai-Practice</a> 레포지터리에서 공유되고 있으며 해당 주소는 다음과 같습니다.</p>
+<ul>
+<li><a href="https://github.com/sanghoho/Fastai-Practice/blob/master/Week%201/Study_Week_1_fastai.ipynb">https://github.com/sanghoho/Fastai-Practice/blob/master/Week%201/Study_Week_1_fastai.ipynb</a></li>
+</ul>
+<h2 id="requirement">Requirement</h2>
+<p><code>fastai</code> 라이브러리는 <code>pytorch</code>를 기반으로 만들어졌기 때문에 GPU 연산을 지원합니다. 그렇기 때문에 실습 시 GPU를 갖춘 클라우드 서버 환경을 준비하신다면, 원활한 실습을 진행하실 수 있습니다. 이에 적합한 환경은 구글에서 제공하는 **<a href="https://colab.research.google.com/" target="_blank" rel="noopener noreffer">Colab</a>**으로 기본적으로 <code>fastai</code> 라이브러리가 이미 설치되어 있기 때문에, Colab 환경에서 실습을 진행하였습니다.</p>
+<h3 id="colab-gpu-셋팅">Colab GPU 셋팅</h3>
+<p>우선 Colab에서 제공하는 GPU를 사용하시려면, 런타임 &gt; 런타임 유형 변경 을 클릭하시고 노트 설정이 뜨면, 하드웨어 가속기를 GPU로 설정해주시면 됩니다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://colab.research.google.com/img/colab_favicon_256px.png"
+        data-srcset="https://colab.research.google.com/img/colab_favicon_256px.png, https://colab.research.google.com/img/colab_favicon_256px.png 1.5x, https://colab.research.google.com/img/colab_favicon_256px.png 2x"
+        data-sizes="auto"
+        alt="https://colab.research.google.com/img/colab_favicon_256px.png"
+        title="colab-logo" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/fastai_1_quickstart/1_gpu_set.png"
+        data-srcset="/images/fastai_1_quickstart/1_gpu_set.png, /images/fastai_1_quickstart/1_gpu_set.png 1.5x, /images/fastai_1_quickstart/1_gpu_set.png 2x"
+        data-sizes="auto"
+        alt="/images/fastai_1_quickstart/1_gpu_set.png"
+        title="gpu-set" /></p>
+<h3 id="google-drive-연동">Google Drive 연동</h3>
+<p>다음은 구글 드라이브 연동 과정입니다.</p>
+<p>이번 실습에서는 크게 중요하지 않지만, 앞으로 구글 드라이브에서 데이터를 읽어오고 결과를 저장하는 등의 작업을 하기 위해서는 구글 드라이브와의 연동이 필수적입니다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://www.trendmicro.com/content/dam/trendmicro/global/en/partners/explore-alliance-partners/googledrive-logo.jpg"
+        data-srcset="https://www.trendmicro.com/content/dam/trendmicro/global/en/partners/explore-alliance-partners/googledrive-logo.jpg, https://www.trendmicro.com/content/dam/trendmicro/global/en/partners/explore-alliance-partners/googledrive-logo.jpg 1.5x, https://www.trendmicro.com/content/dam/trendmicro/global/en/partners/explore-alliance-partners/googledrive-logo.jpg 2x"
+        data-sizes="auto"
+        alt="https://www.trendmicro.com/content/dam/trendmicro/global/en/partners/explore-alliance-partners/googledrive-logo.jpg"
+        title="google-drive-logo" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/gdrive&#39;</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>위의 코드를 실행하면 구글 로그인과 연계가 되고, 최종적으로는 인증키를 반환합니다.</p>
+<p>이 키를 복사하셔서 Colab의 결과창에 입력해주시면 해당 계정의 구글드라이브와 연동이 됩니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&#34;/content/gdrive/My Drive/Colab Notebooks/&#34;</span> <span class="p">)</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="n">root_dir</span> <span class="o">/</span> <span class="s1">&#39;B-Cube-DA-1&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>연동된 구글 드라이브의 진짜 <code>root_dir</code>은 <code>/content/gdrive/My Drive/</code> 까지 입니다. 이 경로 이후로는 자신의 구글드라이브 작업 환경에 따라 다를 것입니다.</p>
+<p>위의 코드는 경로 설정과 관련된 코드로, python의 <code>pathlib</code> 에 속한 <code>Path</code> 클래스를 이용하였습니다.</p>
+<p>초기 경로가 지정된 <code>Path</code> 클래스는 <code>/</code> 연산자를 통해 손쉽게 경로를 추가할 수 있습니다.</p>
+<h3 id="import-fastai">Import fastai</h3>
+<p>이번 실습에서는 이미지 데이터를 다루기 때문에, <code>fastai.vision</code> 을 import 하면 됩니다.</p>
+<p>필요한 메소드나 속성들만 가져올 수 있지만, 편의상 <code>*</code> 를 사용하여 모두 사용가능하게 합니다.</p>
+<p>그리고 의존하고 있는 다양한 라이브러리들이 함께 불러와지기 때문에 <code>pytorch</code>, <code>pandas</code>, <code>numpy</code>등의 함수도 별다른 import 과정 없이 사용가능합니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">fastai.vision</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai.metrics</span> <span class="kn">import</span> <span class="n">error_rate</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>2020년 7월 15일 기준으로 fastai 라이브러리 이용시 많은 경고 메세지가 발생하는 것을 확인하실 수 있습니다.  이는 Pytorch의 버전에 따른 문제로, 다음의 코드로 Pytorch를 설치해주시면 경고 메세지 없이 사용하실 수 있습니다.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">!pip install <span class="s2">&#34;torch==1.4&#34;</span> <span class="s2">&#34;torchvision==0.5.0&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1-fastai-quick-start">1. <code>fastai</code> Quick Start</h2>
+<p>앞서 말씀드린 것처럼 이번 글에서는 강아지와 고양이의 품종 분류 문제를 풀기 위해 이미지 데이터를 활용합니다. 즉 이미지 분류(Image Classification)인데 <code>fastai</code>는 크게 3단계의 프로세스로 진행됩니다.</p>
+<ol>
+<li>데이터 준비 (<code>DataBunch</code>)</li>
+<li>모델 생성 및 학습 (<code>Learner</code>)</li>
+<li>모델 해석 (<code>ClassificationInterpretation</code>)</li>
+</ol>
+<h3 id="11-데이터-준비">1.1. 데이터 준비</h3>
+<p>사용할 데이터는 <a href="http://www.robots.ox.ac.uk/~vgg/publications/2012/parkhi12a/parkhi12a.pdf" target="_blank" rel="noopener noreffer">O. M. Parkhi et al., 2012</a>에서 사용된 <a href="http://www.robots.ox.ac.uk/~vgg/data/pets/" target="_blank" rel="noopener noreffer">Oxford-IIIT Pet Dataset</a> 데이터입니다. 이 데이터는 12종의 고양이와 25종의 개를 가지고 있고, 만들어볼 모델은 이러한 37가지의 다른 종들을 구별해 낼 것입니다. 해당 논문의 연구결과에 따르면, 2012년 기준 가장 높은 정확도는 <strong>59.21%</strong> 였습니다. 이는 &ldquo;이미지&rdquo;, &ldquo;머리&rdquo;, 그리고 &ldquo;몸&quot;을 사진으로부터 분리해서 만들어낸 다소 복잡한 모델의 성능입니다.</p>
+<p><code>fastai</code> 에서는 Pytorch 공식문서에서 제공하는 예제 데이터나 기타 여러 데이터들을 쉽게 다운로드 받을 수 있도록 <code>untar_data</code> 함수와 <code>URLs</code> 클래스를 제공하고 있습니다. 이 <code>untar_data</code> 함수에 <code>URLs</code>에 속한 url을 인자로서 넘겨주면, 자동으로 데이터를 다운 받고 추출(untar)하게 됩니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
+<span class="n">path</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 다운로드된 데이터 폴더의 구조를 확인</span>
+<span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">path_anno</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;annotations&#39;</span>
+<span class="n">path_img</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;images&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 이미지들의 파일이름을 확인하기 위한 함수 사용</span>
+<span class="n">fnames</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path_img</span><span class="p">)</span>
+<span class="n">fnames</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>파일의 라벨링 규칙을 확인한 결과 정규표현식을 사용해야 하며, 이를 통해 <code>DataBunch</code> 생성합니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/([^/]+)_\d+.jpg$&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_name_re</span><span class="p">(</span><span class="n">path_img</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">get_transforms</span><span class="p">(),</span> <span class="n">size</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="n">bs</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">imagenet_stats</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 샘플링된 데이터와 클래스를 확인 </span>
+<span class="n">data</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/2_show_batch.png" title="show-batch" data-thumbnail="/images/fastai_1_quickstart/2_show_batch.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/2_show_batch.png"
+            data-srcset="/images/fastai_1_quickstart/2_show_batch.png, /images/fastai_1_quickstart/2_show_batch.png 1.5x, /images/fastai_1_quickstart/2_show_batch.png 2x"
+            data-sizes="auto"
+            alt="show-batch" height="500px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 분류 클래스를 확인하는 코드입니다.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">classes</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">classes</span><span class="p">),</span><span class="n">data</span><span class="o">.</span><span class="n">c</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="12-모델-생성-및-학습">1.2. 모델 생성 및 학습</h3>
+<p><code>DataBunch</code>를 정상적으로 생성하셨다면, <code>Learner</code>라는 것을 만들어서 모델의 생성 및 학습을 진행하실 수 있습니다.</p>
+<p>자주 사용하게될 <code>Learner</code>는 CNN(Convolutional Neural Network) 기반으로 <code>cnn_learner</code>로 생성합니다.</p>
+<ul>
+<li>인자 설명
+<ul>
+<li><code>data</code>는 앞서 만든 <code>DataBunch</code> 입니다.</li>
+<li><code>model</code> 은 어떤 CNN 아키텍쳐를 쓸지에 관한 것으로, <code>URLs</code>와 유사하게 <code>models</code>라는 클래스를 사용하여 다양한 아키텍쳐 구조와 사전학습된 파라미터를 가져올 수 있습니다.</li>
+<li><strong><code>metrics</code></strong>는 학습간에 어떤 출력을 보여줄지</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet34</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>추가설명<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">기존 강의 자료에서는 <code>ConvLearner</code> 라고 나와있는데 <code>cnn_learner</code> 로 변경되었습니다.</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- ![fit-one-cycle](/images/fastai_1_quickstart/3_fit_one.png) -->
+<a class="lightgallery" href="/images/fastai_1_quickstart/3_fit_one.png" title="fit-one-cycle" data-thumbnail="/images/fastai_1_quickstart/3_fit_one.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/3_fit_one.png"
+            data-srcset="/images/fastai_1_quickstart/3_fit_one.png, /images/fastai_1_quickstart/3_fit_one.png 1.5x, /images/fastai_1_quickstart/3_fit_one.png 2x"
+            data-sizes="auto"
+            alt="fit-one-cycle" height="300px" />
+    </a>
+<p>손쉽게 약 92%의 정확도를 가지는 품종 분류 모델을 생성하였습니다!</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 자신이 원하는 경로에 학습 결과를 저장할 수 있습니다.</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">base_dir</span><span class="o">/</span> <span class="s1">&#39;stage-1&#39;</span><span class="p">,</span> <span class="n">return_path</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/images/fastai_1_quickstart/4_learn_save.png" title="learn-save" data-thumbnail="/images/fastai_1_quickstart/4_learn_save.png" data-sub-html="<h2>저장된 pth 파일</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/4_learn_save.png"
+            data-srcset="/images/fastai_1_quickstart/4_learn_save.png, /images/fastai_1_quickstart/4_learn_save.png 1.5x, /images/fastai_1_quickstart/4_learn_save.png 2x"
+            data-sizes="auto"
+            alt="learn-save" />
+    </a><figcaption class="image-caption">저장된 pth 파일</figcaption>
+    </figure>
+<h3 id="13-모델-해석">1.3. 모델 해석</h3>
+<p><code>fastai</code> 라이브러리는 모델을 학습하는하는 것에서 끝나는 것이 아니라, 이를 분석할 수 있는 기능 또한 포함하고 있습니다.</p>
+<p>학습이 완료된 <code>Learner</code> 를 <code>ClassificationInterpretation.from_learner()</code> 에 입력하여 생성합니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">interp</span> <span class="o">=</span> <span class="n">ClassificationInterpretation</span><span class="o">.</span><span class="n">from_learner</span><span class="p">(</span><span class="n">learn</span><span class="p">)</span> 
+
+<span class="n">losses</span><span class="p">,</span><span class="n">idxs</span> <span class="o">=</span> <span class="n">interp</span><span class="o">.</span><span class="n">top_losses</span><span class="p">()</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">valid_ds</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span> <span class="c1"># 해석에는 validatoin set 을 사용함</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>먼저 모델이 가장 혼란스러워한 데이터셋에 대해 살펴 보겠습니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">interp</span><span class="o">.</span><span class="n">plot_top_losses</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/5_top_losses.png" title="top_losses" data-thumbnail="/images/fastai_1_quickstart/5_top_losses.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/5_top_losses.png"
+            data-srcset="/images/fastai_1_quickstart/5_top_losses.png, /images/fastai_1_quickstart/5_top_losses.png 1.5x, /images/fastai_1_quickstart/5_top_losses.png 2x"
+            data-sizes="auto"
+            alt="top_losses" height="500px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">interp</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/6_confusion_matrix.png" title="learn-save" data-thumbnail="/images/fastai_1_quickstart/6_confusion_matrix.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/6_confusion_matrix.png"
+            data-srcset="/images/fastai_1_quickstart/6_confusion_matrix.png, /images/fastai_1_quickstart/6_confusion_matrix.png 1.5x, /images/fastai_1_quickstart/6_confusion_matrix.png 2x"
+            data-sizes="auto"
+            alt="learn-save" height="500px" />
+    </a>
+<p>Confusion Matrix를 이용하면 한눈에 어느 클래스들 간에 혼동이 잦았는지에 대해서 파악할 수 있습니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">interp</span><span class="o">.</span><span class="n">most_confused</span><span class="p">(</span><span class="n">min_val</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-fastai-advanced-start">2. <code>fastai</code> Advanced Start</h2>
+<p>이번 섹션에서는 앞서 학습한 모델의 성능을 높일 수 있는 방법에 대해서 알아보고자 합니다.</p>
+<h3 id="21-unfreezing-and-fine-tuning">2.1. Unfreezing and fine-tuning</h3>
+<p><strong>unfreezing</strong>은 사전학습 파라미터들을 파인튜닝(fine-tuning)하기 위해 사용됩니다. 처음에 사전 학습 파라미터를 사용하는 <code>Learner</code>를 생성하게 되면 마지막단에서 분류를 진행하는 레이어만 학습을 통해 파라미터가 조정됩니다. 즉, 이미지의 특징을 잡아주는 Convolution 레이어는 잠겨있는데, <code>unfreeze()</code> 함수로 잠금장치를 풀어주는 것과 같습니다.</p>
+<ul>
+<li>Unfreeze를 하는 이유
+<ul>
+<li>레딧 관련글 <a href="https://www.reddit.com/r/learnmachinelearning/comments/a0sqg4/what_is_freezing_layers_in_fastai/" target="_blank" rel="noopener noreffer">[link]</a></li>
+<li>fastai 포럼 <a href="https://forums.fast.ai/t/why-do-we-need-to-unfreeze-the-learner-everytime-before-retarining-even-if-learn-fit-one-cycle-works-fine-without-learn-unfreeze/41614" target="_blank" rel="noopener noreffer">[link]</a></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-learning-rates">2.2. learning rates</h3>
+<p><code>fastai</code> 는 적합한 학습률(learning rate)를 찾아주는 <code>lr_find()</code> 함수도 제공하고 있습니다.</p>
+<p>lr_find는 학습률을 점점 올려가면서 손실에 관한 탐색을 진행하고, 발산하게 되면 탐색을 멈추게 됩니다.</p>
+<p>본격적인 파인튜닝을 위해 다시 이전에 학습된 결과를 불러오겠습니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">/</span> <span class="s1">&#39;stage-1&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 학습률 탐색 및 시각화</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">recorder</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">suggestion</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1">## 어느 부분이 적합한지 추가로 표시</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/7_lr_find.png" title="lr-find" data-thumbnail="/images/fastai_1_quickstart/7_lr_find.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/7_lr_find.png"
+            data-srcset="/images/fastai_1_quickstart/7_lr_find.png, /images/fastai_1_quickstart/7_lr_find.png 1.5x, /images/fastai_1_quickstart/7_lr_find.png 2x"
+            data-sizes="auto"
+            alt="lr-find" height="400px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_lr</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/8_fit_one_with_unfreeze.png" title="fit-one-unfreeze" data-thumbnail="/images/fastai_1_quickstart/8_fit_one_with_unfreeze.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/8_fit_one_with_unfreeze.png"
+            data-srcset="/images/fastai_1_quickstart/8_fit_one_with_unfreeze.png, /images/fastai_1_quickstart/8_fit_one_with_unfreeze.png 1.5x, /images/fastai_1_quickstart/8_fit_one_with_unfreeze.png 2x"
+            data-sizes="auto"
+            alt="fit-one-unfreeze" height="200px" />
+    </a>
+<h3 id="23-change-architecture">2.3. Change Architecture</h3>
+<p>Deep Learning은 층이 깊어질 수록 더욱 해당 Task를 잘 학습하는 방향으로 발전하게 되었고, 가장 대표적인 아키텍쳐는 <a href="https://arxiv.org/pdf/1512.03385.pdf" target="_blank" rel="noopener noreffer">ResNet</a>일 것입니다. 이 아키텍쳐는 층이 깊어질수록 성능이 떨어졌던 기존의 아키텍쳐들의 문제를 해결하여 층이 깊어질수록 더 좋은 효과를 내고 있습니다. <strong>ResNet</strong>에 대해서는 차후의 강의에서 더욱 심도깊게 다룰 것이고, 지금은 품종분류에서 더 좋은 성능을 낼 수 있도록 34층(<code>resnet34</code>)에서 50층(<code>resnet50</code>)으로 아키텍쳐를 바꿔서 학습을 해보도록 하겠습니다. 혹시 이에 관한 읽을 자료가 필요하시다면 이미지 분류 모델의 발전 과정에 대한 <a href="https://dnddnjs.github.io/cifar10/2018/10/09/resnet/" target="_blank" rel="noopener noreffer">블로그 포스트</a>를 참조하시면 좋을 것 같습니다.</p>
+<p>더욱 깊어진 아키텍쳐로 인해서 GPU 메모리가 부족하다는 경고를 보게 된다면, batch 사이즈를 줄여서 이를 해결할 수 있습니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_name_re</span><span class="p">(</span><span class="n">path_img</span><span class="p">,</span> <span class="n">fnames</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">get_transforms</span><span class="p">(),</span>
+                                   <span class="n">size</span><span class="o">=</span><span class="mi">299</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="n">bs</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">imagenet_stats</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">recorder</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/9_lr_find_freeze.png" title="lr-freeze" data-thumbnail="/images/fastai_1_quickstart/9_lr_find_freeze.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/9_lr_find_freeze.png"
+            data-srcset="/images/fastai_1_quickstart/9_lr_find_freeze.png, /images/fastai_1_quickstart/9_lr_find_freeze.png 1.5x, /images/fastai_1_quickstart/9_lr_find_freeze.png 2x"
+            data-sizes="auto"
+            alt="lr-freeze" height="400px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/10_fit_resnet50.png" title="fit-resnet50" data-thumbnail="/images/fastai_1_quickstart/10_fit_resnet50.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/10_fit_resnet50.png"
+            data-srcset="/images/fastai_1_quickstart/10_fit_resnet50.png, /images/fastai_1_quickstart/10_fit_resnet50.png 1.5x, /images/fastai_1_quickstart/10_fit_resnet50.png 2x"
+            data-sizes="auto"
+            alt="fit-resnet50" height="400px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">/</span> <span class="s1">&#39;stage-1-50&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>성능 향상을 위한과정</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">max_lr</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/11_unfreeze_resnet50.png" title="lr-freeze" data-thumbnail="/images/fastai_1_quickstart/11_unfreeze_resnet50.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/11_unfreeze_resnet50.png"
+            data-srcset="/images/fastai_1_quickstart/11_unfreeze_resnet50.png, /images/fastai_1_quickstart/11_unfreeze_resnet50.png 1.5x, /images/fastai_1_quickstart/11_unfreeze_resnet50.png 2x"
+            data-sizes="auto"
+            alt="lr-freeze" height="200px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">/</span> <span class="s1">&#39;stage-1-50&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>결과 분석</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">interp</span> <span class="o">=</span> <span class="n">ClassificationInterpretation</span><span class="o">.</span><span class="n">from_learner</span><span class="p">(</span><span class="n">learn</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">interp</span><span class="o">.</span><span class="n">most_confused</span><span class="p">(</span><span class="n">min_val</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3-alpha-mnist-dataset">3. $(+\alpha)$ MNIST Dataset</h2>
+<p>유명한 손글씨 분류 데이터셋인 MNIST 데이터셋으로 손글씨 분류기를 만들어보도록 하겠습니다. 여기서는 학습과정보다 다양한 방법으로 데이터를 준비하는 과정을 유의하여 보면 좋을 것 같습니다.</p>
+<p>자세한 함수군들에 대한 설명은 해당 <a href="https://docs.fast.ai/vision.data.html#Factory-methods" target="_blank" rel="noopener noreffer">공식문서</a>를 확인해주시면 됩니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_SAMPLE</span><span class="p">);</span> <span class="n">path</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>손글씨 데이터는 좌우 반전등의 데이터 변형 기법들이 적용되면 안되기 때문에, <code>get_transforms(do_filp=False)</code> 를 이용합니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tfms</span> <span class="o">=</span> <span class="n">get_transforms</span><span class="p">(</span><span class="n">do_flip</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="31-from_folder">3.1. <code>from_folder</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/12_mnist_batch.png" title="lr-freeze" data-thumbnail="/images/fastai_1_quickstart/12_mnist_batch.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/12_mnist_batch.png"
+            data-srcset="/images/fastai_1_quickstart/12_mnist_batch.png, /images/fastai_1_quickstart/12_mnist_batch.png 1.5x, /images/fastai_1_quickstart/12_mnist_batch.png 2x"
+            data-sizes="auto"
+            alt="lr-freeze" height="500px" />
+    </a>
+<p>이번에는 error_rate가 아닌 accuracy를 표시해보도록 하였습니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">accuracy</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/13_mnist_accuracy.png" title="lr-freeze" data-thumbnail="/images/fastai_1_quickstart/13_mnist_accuracy.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/13_mnist_accuracy.png"
+            data-srcset="/images/fastai_1_quickstart/13_mnist_accuracy.png, /images/fastai_1_quickstart/13_mnist_accuracy.png 1.5x, /images/fastai_1_quickstart/13_mnist_accuracy.png 2x"
+            data-sizes="auto"
+            alt="lr-freeze" height="200px" />
+    </a>
+<h3 id="32-from_csv">3.2. <code>from_csv</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="33-from_df">3.3. <code>from_df</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;labels.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="/images/fastai_1_quickstart/14_df_head.png" title="lr-freeze" data-thumbnail="/images/fastai_1_quickstart/14_df_head.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/fastai_1_quickstart/14_df_head.png"
+            data-srcset="/images/fastai_1_quickstart/14_df_head.png, /images/fastai_1_quickstart/14_df_head.png 1.5x, /images/fastai_1_quickstart/14_df_head.png 2x"
+            data-sizes="auto"
+            alt="lr-freeze" height="200px" />
+    </a>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">classes</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="34-from_name_re">3.4. <code>from_name_re</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fn_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">/</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]];</span> <span class="n">fn_paths</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;/(\d)/\d+\.png$&#34;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_name_re</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fn_paths</span><span class="p">,</span> <span class="n">pat</span><span class="o">=</span><span class="n">pat</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">classes</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="35-from_name_func">3.5. <code>from_name_func</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_name_func</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fn_paths</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>
+        <span class="n">label_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span> <span class="k">if</span> <span class="s1">&#39;/3/&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;7&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">classes</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">labels</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;3&#39;</span> <span class="k">if</span> <span class="s1">&#39;/3/&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;7&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fn_paths</span><span class="p">]</span>
+<span class="n">labels</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="36-from_lists">3.6. <code>from_lists</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">ImageDataBunch</span><span class="o">.</span><span class="n">from_lists</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fn_paths</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">ds_tfms</span><span class="o">=</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">classes</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="conclusion">Conclusion</h1>
+<p>이번 글에서는 강아지와 고양이의 품종 분류 문제를 풀어나가는 fastai Quickstart를 중점적으로 다루었고, 성능 향상을 위한 몇몇 방법들, 그리고 <code>DataBunch</code>를 만들기 위한 다양한 방법들에 대해서도 알아보았습니다.</p>
+<p>fastai 사용해보면서 느낀점은 모델링 작업을 하다보면 편의상 필요로 하는 부분들을 잘 구현해주어 보다 쉬운 사용이 가능하다는 것입니다. 또한 뒤에서 자세하게 다루겠지만, 전이학습(Transfer Learning) 및 One Cycle Policy가 잘 적용되어 있어서 대부분의 상황에서 좋은 모델 결과를 기대할 수 있습니다.</p>
+<p><code>fastai</code> 시리즈는 강의를 기반으로 하지만, 포스팅 순서는 강의의 순서를 따르지는 않습니다. 앞으로의 포스팅 순서에 대해서 간략하게 말씀드리면 이번에는 이미지 분류 문제만을 다루어 보았는데, 이미지 데이터를 활용한 더욱 다양한 방법론들을 다루어 볼 것입니다. 다음으로는 테이블 데이터의 활용과 추천 시스템, 그리고 자연어 처리 (Natural Language Processing)의 순서로 진행할 예정입니다.</p>
+<p>감사합니다!</p>
+<h1 id="reference">Reference</h1>
+<ol>
+<li>수업 실습 자료 <a href="https://github.com/fastai/course-v3/blob/master/nbs/dl1/lesson1-pets.ipynb" target="_blank" rel="noopener noreffer">[ipynb]</a></li>
+<li>수업 강의 영상 <a href="https://course.fast.ai/videos/?lesson=1" target="_blank" rel="noopener noreffer">[Video]</a></li>
+<li>강의 상세 설명 <a href="https://github.com/hiromis/notes/blob/master/Lesson1.md" target="_blank" rel="noopener noreffer">[Github]</a></li>
+<li>Pytorch 공식 튜토리얼 <a href="https://pytorch.org/tutorials/beginner/nn_tutorial.html" target="_blank" rel="noopener noreffer">[Doc]</a></li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-07-15&nbsp;<a class="git-hash" href="https://github.com/sanghoho/hugo-blog-main/commit/70c18690234b8200eda3f990956c7979c109f0c4" target="_blank" title="commit by sanghoho(ash1151@ajou.ac.kr) 70c18690234b8200eda3f990956c7979c109f0c4: Post: Deep Learning with fastai - 1 and minor fix">
+                                    <i class="fas fa-hashtag fa-fw"></i>70c1869</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020/07/fastai-1-quickstart/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/fastai/">fastai</a>,&nbsp;<a href="/tags/python/">python</a>,&nbsp;<a href="/tags/colab/">colab</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/07/hugo-quick-start/" class="prev" rel="prev" title="[Hugo] Quick Start 1"><i class="fas fa-angle-left fa-fw"></i>[Hugo] Quick Start 1</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">sanghoho</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"sanghoho/blog-comments"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-172330494-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172330494-1" async></script></body>
+</html>

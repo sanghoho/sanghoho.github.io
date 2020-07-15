@@ -4,7 +4,14 @@
         <link>http://sanghoho.github.io/posts/</link>
         <description>All Posts | R is Well</description>
         <generator>Hugo -- gohugo.io</generator><language>kr</language><managingEditor>ash1151@ajou.ac.kr (sanghoho)</managingEditor>
-            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 15:39:31 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Deep Learning with Fastai - 1: Quick Start</title>
+    <link>http://sanghoho.github.io/2020/07/fastai-1-quickstart/</link>
+    <pubDate>Fri, 10 Jul 2020 15:39:31 &#43;0900</pubDate>
+    <author>Author</author>
+    <guid>http://sanghoho.github.io/2020/07/fastai-1-quickstart/</guid>
+    <description><![CDATA[Introduction fastai는 Pytorch 기반의 딥러닝 API로 딥러닝 기술을 누구나 쉽게 이용할 수 있도록 하는 것을 목표로 하며 강의와 라이브러리를 제공합니다. 이 글을 시작으로하는]]></description>
+</item><item>
     <title>[Hugo] Quick Start 1</title>
     <link>http://sanghoho.github.io/2020/07/hugo-quick-start/</link>
     <pubDate>Fri, 10 Jul 2020 01:23:30 &#43;0900</pubDate>
