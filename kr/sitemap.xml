@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://sanghoho.github.io/categories/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://sanghoho.github.io/categories/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/categories/"
@@ -11,11 +11,11 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/categories/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/tags/colab/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://sanghoho.github.io/2020/07/fastai-1-quickstart/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://sanghoho.github.io/tags/fastai/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://sanghoho.github.io/categories/machine-learning/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://sanghoho.github.io/posts/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://sanghoho.github.io/tags/gradient-descent/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://sanghoho.github.io/tags/linear-algebra/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://sanghoho.github.io/categories/machine-learning/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://sanghoho.github.io/2021/01/ml-from-scratch-1/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://sanghoho.github.io/posts/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/posts/"
@@ -24,8 +24,8 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/posts/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/tags/python/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://sanghoho.github.io/tags/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://sanghoho.github.io/tags/python/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://sanghoho.github.io/tags/</loc><lastmod>2021-01-09T02:29:14&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/tags/"
@@ -34,7 +34,10 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/tags/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/about/</loc><lastmod>2020-07-12T22:54:15&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://sanghoho.github.io/tags/colab/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://sanghoho.github.io/2020/07/fastai-1-quickstart/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://sanghoho.github.io/tags/fastai/</loc><lastmod>2020-07-15T22:14:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://sanghoho.github.io/about/</loc><lastmod>2021-01-09T01:33:16&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/about/"
@@ -43,7 +46,7 @@
                     hreflang="kr"
                     href="http://sanghoho.github.io/about/"
                     /></url><url>
-            <loc>http://sanghoho.github.io/</loc><lastmod>2020-07-12T22:54:15&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://sanghoho.github.io/</loc><lastmod>2021-01-09T01:33:16&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://sanghoho.github.io/en/"

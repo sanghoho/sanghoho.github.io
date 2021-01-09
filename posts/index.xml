@@ -4,7 +4,14 @@
         <link>http://sanghoho.github.io/posts/</link>
         <description>All Posts | R is Well</description>
         <generator>Hugo -- gohugo.io</generator><language>kr</language><managingEditor>ash1151@ajou.ac.kr (sanghoho)</managingEditor>
-            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 15:39:31 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ash1151@ajou.ac.kr (sanghoho)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 09 Jan 2021 02:29:14 &#43;0900</lastBuildDate><atom:link href="http://sanghoho.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Machine Learning from Scratch - 1: Introduction</title>
+    <link>http://sanghoho.github.io/2021/01/ml-from-scratch-1/</link>
+    <pubDate>Sat, 09 Jan 2021 02:29:14 &#43;0900</pubDate>
+    <author>Author</author>
+    <guid>http://sanghoho.github.io/2021/01/ml-from-scratch-1/</guid>
+    <description><![CDATA[시리즈를 시작하면서 머신러닝의 개념을 처음 접한 것은 대학에 입학했던 2016년도 였고, 구글 DeepMind 사의 AlphaGo와 이세돌의 대국이 이루어지고 있었습니다.]]></description>
+</item><item>
     <title>Deep Learning with Fastai - 1: Quick Start</title>
     <link>http://sanghoho.github.io/2020/07/fastai-1-quickstart/</link>
     <pubDate>Fri, 10 Jul 2020 15:39:31 &#43;0900</pubDate>
